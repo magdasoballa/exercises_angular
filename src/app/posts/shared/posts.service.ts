@@ -13,4 +13,9 @@ export class PostsService {
     const posts = 'https://jsonplaceholder.typicode.com/posts';
     return this.http.get<Post[]>(posts);
   }
+
+  getDetails(id: number) {
+    const link = `https://jsonplaceholder.typicode.com/posts/${id}`;
+    return this.http.get<Post>(link)
+  }
 }
